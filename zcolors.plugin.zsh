@@ -17,7 +17,7 @@ zcolors.plugin() {
   export GREP_COLOR='30;103'           # black on bright yellow
   export GREP_COLORS="mt=$GREP_COLOR"  # GNU grep >= 3
 
-  if whence -p less > /dev/null && (( ${${=$( less -V )}[2]} >= 581 )); then
+  if [[ ! $(uname) == "Darwin" ]]; then
     export -T LESS less ' '
 
     # [S]earch results: blac[k] on bright [Y]ellow
